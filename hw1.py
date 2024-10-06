@@ -36,11 +36,10 @@ class Complex:
             return Complex(self.a/other, self.b/other)
         raise NotImplementedError
  
-    def __toexp__(self):
+    def toexp(self):
         if isinstance(self, Complex):
-            return (math.sqrt(self.a**2+self.b**2),math.atan(self.b/self.a))
+            return (str(math.sqrt(self.a**2+self.b**2))+'e^'+str(math.atan(self.b/self.a)))
         elif self.a>0:
-            return (math.sqrt(self.a**2+self.b**2),0)
+            return (str(abs(self.a))+'e^0')
         else:
-            return (math.sqrt(self.a**2+self.b**2),math.pi)
-        raise NotImplementedError
+            return (str(abs(self.a))+'e^'+str(math.pi))
