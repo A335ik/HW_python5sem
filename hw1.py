@@ -24,14 +24,14 @@ class Complex:
  
     def __mul__(self, other):
         if isinstance(other, Complex):
-            return Complex((self.a*other.a + self.b*other.b)/(other.a**2 + other.b**2), (self.b*other.a - self.a*other.b)/(other.a**2 + other.b**2))
+            return Complex(self.a*other.a - self.b*other.b, self.a*other.b + self.b*other.a)
         if isinstance(other, (int, float)):
             return Complex(self.a*other, self.b*other)
         raise NotImplementedError
  
     def __truediv__(self, other):
         if isinstance(other, Complex):
-            return Complex(self.a*other.a - self.b*other.b, self.a*other.b + self.b*other.a)
+            return Complex((self.a*other.a + self.b*other.b)/(other.a**2 + other.b**2), (self.b*other.a - self.a*other.b)/(other.a**2 + other.b**2))
         if isinstance(other, (int, float)):
             return Complex(self.a/other, self.b/other)
         raise NotImplementedError
