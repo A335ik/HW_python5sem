@@ -37,7 +37,7 @@ class Complex:
         raise NotImplementedError
  
     def toexp(self):
-        if isinstance(self, Complex):
+        if self.b != 0:
             return (str(math.sqrt(self.a**2+self.b**2))+'e^'+str(math.atan(self.b/self.a)))
         elif self.a>0:
             return (str(abs(self.a))+'e^0')
