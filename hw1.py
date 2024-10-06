@@ -6,7 +6,7 @@ class Complex:
         self.b = b
  
     def __repr__(self):
-        return f'{self.a}{"-" if self.b < 0 else "+"}{abs(self.b)}j'
+        return f'{self.a}{"-" if self.b < 0 else "+"}{abs(self.b)}i'
  
     def __add__(self, other):
         if isinstance(other, Complex):
