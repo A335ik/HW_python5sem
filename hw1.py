@@ -35,10 +35,10 @@ class Complex:
             return Complex(self.a/other, self.b/other)
         raise NotImplementedError
  
-    def __toTrig__(a,b):
-        if abs(b)>1.0e-15:
-            return (math.sqrt(a**2+b**2),math.atan(y/x))
-        elif a>0:
-            return (math.sqrt(x**2+y**2),0)
+    def __toexp__(self):
+        if isinstance(self, Complex):
+            return (math.sqrt(self.a**2+self.b**2),math.atan(self.b/self.a))
+        elif self.a>0:
+            return (math.sqrt(self.a**2+self.b**2),0)
         else:
-            return (math.sqrt(x**2+y**2),math.pi)
+            return (math.sqrt(self.a**2+self.b**2),math.pi)
