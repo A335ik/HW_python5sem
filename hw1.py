@@ -43,3 +43,4 @@ class Complex:
             return (math.sqrt(self.a**2+self.b**2),0)
         else:
             return (math.sqrt(self.a**2+self.b**2),math.pi)
+        raise NotImplementedError
